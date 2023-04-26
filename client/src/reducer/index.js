@@ -48,10 +48,9 @@ function rootReducer (state=initialState, action) {
                 countries: allCountries3
             }
         case SEARCH_COUNTRY:
-            const allCountries4 = state.allCountries;
             return {
                 ...state,
-                countries: allCountries4.filter( a => a.population >= action.payload)
+                countries: action.payload
             }
         case COUNTRY_DETAIL:
             return {

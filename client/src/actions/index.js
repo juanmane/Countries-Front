@@ -52,21 +52,21 @@ export function filterByActivity(payload) {
 }
 
 export function searchCountry(name) {
-    return {
-        type: SEARCH_COUNTRY,
-        payload: name 
-    }
-    // return async function (dispatch) {
-    //     try {
-    //         let json = await axios.get(`http://localhost:3001/countries?name=${name}`);
-    //         return dispatch({
-    //             type: SEARCH_COUNTRY,
-    //             payload: json.data
-    //         })
-    //     } catch (error) {
-    //         alert("No se encontró el país");
-    //     }
+    // return {
+    //     type: SEARCH_COUNTRY,
+    //     payload: name 
     // }
+    return async function (dispatch) {
+        try {
+            let json = await axios.get(`http://localhost:3001/countries?name=${name}`);
+            return dispatch({
+                type: SEARCH_COUNTRY,
+                payload: json.data
+            })
+        } catch (error) {
+            alert("No se encontró el país");
+        }
+    }
 }
 
 export function countryDetail(name) {
