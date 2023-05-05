@@ -7,6 +7,15 @@ import {Provider} from "react-redux";
 import { store } from "./store";
 import { BrowserRouter } from 'react-router-dom';
 
+// import firebase from "firebase/app";
+// import "firebase/auth";
+
+// firebase.initializeApp({
+//   apiKey: "AIzaSyD5jEq1xq2lAfVCueJ_VKg2SyOQF-xk5cw",
+//   authDomain: "countries-8046e.firebaseapp.com",
+//   projectId: "countries-8046e"
+// })
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
